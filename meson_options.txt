@@ -1,0 +1,2 @@
+option('with-hibernate', type: 'boolean', value: true, description: 'Include support for system hibernation')
+option('with-gnome-screensaver', type: 'boolean', value: false, description: 'Build using gnome-screensaver as a dependency')

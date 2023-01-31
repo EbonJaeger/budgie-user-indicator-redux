@@ -1,0 +1,9 @@
+[Plugin]
+Module=libuserindicator.so
+Builtin=true
+Name=User Indicator
+Description=Lets you manage your session from the panel.
+Authors=Evan Maddock
+Copyright=Copyright Evan Maddock
+Website=https://github.com/EbonJaeger/budgie-user-indicator-redux
+Icon=system-shutdown
