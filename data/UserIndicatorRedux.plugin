@@ -1,7 +1,6 @@
 [Plugin]
-Module=libuserindicator.so
-Builtin=true
-Name=User Indicator
+Module=libuserindicatorredux.so
+Name=User Indicator Redux
 Description=Lets you manage your session from the panel.
 Authors=Evan Maddock
 Copyright=Copyright Evan Maddock
