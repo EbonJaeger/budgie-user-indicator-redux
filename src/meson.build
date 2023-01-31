@@ -1,7 +1,9 @@
 # Dependencies
 
 applet_deps = [
+    dep_accountsservice,
     dep_budgie,
+    dep_gee,
     dep_gtk3,
     dep_glib,
     dep_giounix,
@@ -14,16 +16,14 @@ applet_sources = [
     'applet.vala',
     'dbus.vala',
     'popover.vala',
-    'user_button.vala',
+    'Widgets/user_box.vala',
+    'Widgets/user_image.vala',
 ]
 
 shared_library(
     'userindicatorredux',
     applet_sources,
     dependencies: applet_deps,
-    # vala_args: [
-    #     '--pkg', 'libpeas-1.0',
-    # ],
     install: true,
     install_dir: applet_install_dir
 )

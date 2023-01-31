@@ -13,23 +13,6 @@
 using GLib;
 
 namespace UserIndicatorRedux {
-    [DBus (name = "org.freedesktop.Accounts")]
-    public interface AccountsRemote : Object {
-        public abstract string find_user_by_name (string username) throws DBusError, IOError;
-    }
-
-    [DBus (name = "org.freedesktop.Accounts.User")]
-    public interface AccountUserRemote : Object {
-        public signal void changed ();
-    }
-
-    [DBus (name = "org.freedesktop.DBus.Properties")]
-    public interface PropertiesRemote : Object {
-        public signal void properties_changed ();
-
-        public abstract Variant get (string iface, string property) throws DBusError, IOError;
-    }
-
     [DBus (name = "org.freedesktop.login1.Manager")]
     public interface LogindRemote : Object {
         public abstract string can_hibernate () throws DBusError, IOError;
