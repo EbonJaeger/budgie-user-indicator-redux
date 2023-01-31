@@ -12,6 +12,9 @@ applet_deps = [
 
 applet_sources = [
     'applet.vala',
+    'dbus.vala',
+    'popover.vala',
+    'user_button.vala',
 ]
 
 shared_library(

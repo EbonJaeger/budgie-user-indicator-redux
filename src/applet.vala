@@ -1,3 +1,14 @@
+/*
+ * This file is part of user-indicator-redux
+ *
+ * Copyright Evan Maddock
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ */
+
 using Gtk;
 
 namespace UserIndicatorRedux {
@@ -10,9 +21,28 @@ namespace UserIndicatorRedux {
     public class Applet : Budgie.Applet {
         public string uuid { get; set; }
 
+        private unowned Budgie.PopoverManager? manager = null;
+
+        private Button button;
+        private Popover popover;
+
         construct {
-            var button = new Button.from_icon_name ("system-shutdown-symbolic", MENU);
+            button = new Button.from_icon_name ("system-shutdown-symbolic", MENU);
             button.get_style_context ().add_class ("flat");
+
+            popover = new Popover (button);
+            popover.get_child ().show_all ();
+
+            // Toggle the popover on click
+            button.clicked.connect (() => {
+                if (manager == null) return;
+
+                if (popover.visible) {
+                    popover.hide ();
+                } else {
+                    manager.show_popover (button);
+                }
+            });
 
             add (button);
             show_all ();
@@ -20,6 +50,11 @@ namespace UserIndicatorRedux {
 
         public Applet (string uuid) {
             Object (uuid: uuid);
+        }
+
+        public override void update_popovers (Budgie.PopoverManager? manager) {
+            this.manager = manager;
+            manager.register_popover (button, popover);
         }
     }
 }
