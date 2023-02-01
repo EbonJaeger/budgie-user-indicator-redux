@@ -20,10 +20,20 @@ namespace UserIndicatorRedux {
     public class Popover : Budgie.Popover {
         private unowned Act.UserManager user_manager;
 
+        private LogindInterface logind_interface;
+        private ScreenSaverInterface screensaver_interface;
+        private SessionManagerInterface session_interface;
+
         private unowned string username;
 
         private Box user_header;
         private HashMap<uint, Widgets.UserBox?> user_boxes;
+
+        private ModelButton lock_button;
+        private ModelButton logout_button;
+        private ModelButton suspend_button;
+        private ModelButton restart_button;
+        private ModelButton shutdown_button;
 
         construct {
             user_boxes = new HashMap<uint, Widgets.UserBox?> ();
@@ -50,18 +60,129 @@ namespace UserIndicatorRedux {
                 }
             });
 
+            lock_button = new ModelButton () {
+                text = "Lock"
+            };
+
+            logout_button = new ModelButton () {
+                text = "Logout..."
+            };
+
+            suspend_button = new ModelButton () {
+                text = "Suspend"
+            };
+
+            restart_button = new ModelButton () {
+                text = "Reboot..."
+            };
+
+            shutdown_button = new ModelButton () {
+                text = "Shutdown..."
+            };
+
             user_header.pack_end (settings_button);
             box.pack_start (user_header, false, false, 0);
             box.pack_start (new Separator (Orientation.HORIZONTAL), true, true, 2);
+            box.pack_start (lock_button);
+            box.pack_start (logout_button);
+            box.pack_start (new Separator (Orientation.HORIZONTAL), true, true, 2);
+            box.pack_start (suspend_button);
+            box.pack_start (restart_button);
+            box.pack_start (shutdown_button);
             add (box);
 
             user_manager = Act.UserManager.get_default ();
             init_user ();
             user_manager.notify["is-loaded"].connect (init_user);
+
+            init_interfaces.begin ();
+
+            lock_button.clicked.connect (() => {
+                hide ();
+
+                try {
+                    screensaver_interface.lock ();
+                } catch (Error e) {
+                    warning ("Unable to lock the screen: %s", e.message);
+                }
+            });
+
+            logout_button.clicked.connect (() => {
+                hide ();
+
+                session_interface.logout.begin (0, (obj, res) => {
+                    try {
+                        session_interface.logout.end (res);
+                    } catch (Error e) {
+                        if (e is IOError.CANCELLED) return;
+                        warning ("Unable to open logout dialog: %s", e.message);
+                    }
+                });
+            });
+
+            suspend_button.clicked.connect (() => {
+                hide ();
+
+                try {
+                    logind_interface.suspend (true);
+                } catch (Error e) {
+                    warning ("Unable to suspend: %s", e.message);
+                }
+            });
+
+            restart_button.clicked.connect (() => {
+                hide ();
+
+                session_interface.reboot.begin ((obj, res) => {
+                    try {
+                        session_interface.reboot.end (res);
+                    } catch (Error e) {
+                        if (e is IOError.CANCELLED) return;
+                        warning ("Unable to open reboot dialog: %s", e.message);
+                    }
+                });
+            });
+
+            shutdown_button.clicked.connect (() => {
+                hide ();
+
+                session_interface.shutdown.begin ((obj, res) => {
+                    try {
+                        session_interface.shutdown.end (res);
+                    } catch (Error e) {
+                        if (e is IOError.CANCELLED) return;
+                        warning ("Unable to open shutdown dialog: %s", e.message);
+                    }
+                });
+            });
         }
 
         public Popover (Widget? parent_window) {
             Object (relative_to: parent_window);
+        }
+
+        private async void init_interfaces () {
+            try {
+                logind_interface = yield Bus.get_proxy<LogindInterface> (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+            } catch (Error e) {
+                warning ("Unable to connect to LoginD interface: %s", e.message);
+            }
+
+            try {
+                screensaver_interface = yield Bus.get_proxy<ScreenSaverInterface> (BusType.SESSION, "org.gnome.ScreenSaver", "/org/gnome/ScreenSaver");
+            } catch (Error e) {
+#if HAVE_GNOME_SCREENSAVER
+                warning ("Unable to connect to GNOME ScreenSaver interface: %s", e.message);
+#else
+                warning ("Unable to connect to Budgie ScreenSaver interface: %s", e.message);
+#endif
+            }
+
+            try {
+                session_interface = yield Bus.get_proxy<SessionManagerInterface> (BusType.SESSION, "org.gnome.SessionManager", "/org/gnome/SessionManager");
+            } catch (Error e) {
+                warning ("Unable to connect to SessionManager interface: %s", e.message);
+            }
         }
 
         private void init_user () {

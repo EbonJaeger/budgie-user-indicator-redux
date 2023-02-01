@@ -14,21 +14,20 @@ using GLib;
 
 namespace UserIndicatorRedux {
     [DBus (name = "org.freedesktop.login1.Manager")]
-    public interface LogindRemote : Object {
+    public interface LogindInterface : Object {
         public abstract string can_hibernate () throws DBusError, IOError;
-
         public abstract void suspend (bool interactive) throws DBusError, IOError;
         public abstract void hibernate (bool interactive) throws DBusError, IOError;
     }
 
     [DBus (name = "org.gnome.ScreenSaver")]
-    public interface ScreensaverRemote : Object {
+    public interface ScreenSaverInterface : Object {
         public abstract void lock () throws Error;
     }
 
     [DBus (name = "org.gnome.SessionManager")]
-    public interface SessionManagerRemote : Object {
-        public abstract void logout (uint mode) throws DBusError, IOError;
+    public interface SessionManagerInterface : Object {
+        public abstract async void logout (uint mode) throws DBusError, IOError;
         public abstract async void reboot () throws Error;
         public abstract async void shutdown () throws Error;
     }
