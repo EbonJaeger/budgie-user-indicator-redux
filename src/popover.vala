@@ -20,6 +20,8 @@ namespace UserIndicatorRedux {
     public class Popover : Budgie.Popover {
         private unowned Act.UserManager user_manager;
 
+        private GLib.Settings settings;
+
         private LogindInterface logind_interface;
         private ScreenSaverInterface screensaver_interface;
         private SessionManagerInterface session_interface;
@@ -29,6 +31,7 @@ namespace UserIndicatorRedux {
         private Box user_header;
         private HashMap<uint, Widgets.UserBox?> user_boxes;
 
+        private ModelButton settings_button;
         private ModelButton lock_button;
         private ModelButton logout_button;
         private ModelButton suspend_button;
@@ -47,7 +50,7 @@ namespace UserIndicatorRedux {
 
             user_header = new Box (Orientation.VERTICAL, 12);
 
-            var settings_button = new ModelButton () {
+            settings_button = new ModelButton () {
                 text = "User Settings..."
             };
             settings_button.get_style_context ().add_class ("flat");
@@ -203,8 +206,15 @@ namespace UserIndicatorRedux {
 #endif
         }
 
-        public Popover (Widget? parent_window) {
+        public Popover (GLib.Settings settings, Widget? parent_window) {
             Object (relative_to: parent_window);
+            get_child ().show_all ();
+            this.settings = settings;
+            settings.bind ("show-user-settings", settings_button, "visible", SettingsBindFlags.GET);
+            settings.bind ("show-suspend", suspend_button, "visible", SettingsBindFlags.GET);
+#if WITH_HIBERNATE
+            settings.bind ("show-hibernate", hibernate_button, "visible", SettingsBindFlags.GET);
+#endif
         }
 
         private async void init_interfaces () {

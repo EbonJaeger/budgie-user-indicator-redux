@@ -19,8 +19,31 @@ namespace UserIndicatorRedux {
         }
     }
 
+    [GtkTemplate (ui = "/com/github/EbonJaeger/user-indicator-redux/settings.ui")]
+    public class AppletSettings : Grid {
+        [GtkChild]
+        private unowned Switch? switch_show_user_settings;
+
+        [GtkChild]
+        private unowned Switch? switch_show_suspend;
+
+        [GtkChild]
+        private unowned Switch? switch_show_hibernate;
+
+        private GLib.Settings? settings;
+
+        public AppletSettings (GLib.Settings? settings) {
+            this.settings = settings;
+            settings.bind ("show-user-settings", switch_show_user_settings, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-suspend", switch_show_suspend, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-hibernate", switch_show_hibernate, "active", SettingsBindFlags.DEFAULT);
+        }
+    }
+
     public class Applet : Budgie.Applet {
         public string uuid { get; set; }
+
+        protected GLib.Settings settings;
 
         private unowned Budgie.PopoverManager? manager = null;
 
@@ -33,13 +56,21 @@ namespace UserIndicatorRedux {
             var provider = new CssProvider ();
             provider.load_from_resource ("/com/github/EbonJaeger/user-indicator-redux/style.css");
             StyleContext.add_provider_for_screen (screen, provider, STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+
+        public Applet (string uuid) {
+            Object (uuid: uuid);
+
+            // Hook up our settings
+            settings_schema = "com.github.EbonJaeger.user-indicator-redux";
+            settings_prefix = "/com/solus-project/budgie-panel/instance/user-indicator-redux";
+            settings = get_applet_settings (uuid);
 
             // Create our widgets
             button = new Button.from_icon_name ("system-shutdown-symbolic", MENU);
             button.get_style_context ().add_class ("flat");
 
-            popover = new Popover (button);
-            popover.get_child ().show_all ();
+            popover = new Popover (settings, button);
 
             // Toggle the popover on click
             button.clicked.connect (() => {
@@ -56,8 +87,13 @@ namespace UserIndicatorRedux {
             show_all ();
         }
 
-        public Applet (string uuid) {
-            Object (uuid: uuid);
+        public override Gtk.Widget? get_settings_ui () {
+            var applet_settings = get_applet_settings (uuid);
+            return new UserIndicatorRedux.AppletSettings (applet_settings);
+        }
+
+        public override bool supports_settings () {
+            return true;
         }
 
         public override void update_popovers (Budgie.PopoverManager? manager) {

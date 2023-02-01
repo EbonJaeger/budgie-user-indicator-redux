@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
     <gresource prefix="/com/github/EbonJaeger/user-indicator-redux">
+        <file preprocess="xml-stripblanks">settings.ui</file>
         <file alias="style.css">../style/style.css</file>
     </gresource>
 </gresources>

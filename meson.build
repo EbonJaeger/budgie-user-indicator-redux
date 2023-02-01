@@ -43,3 +43,7 @@ gnome = import('gnome')
 subdir('data')
 subdir('style')
 subdir('src')
+
+gnome.post_install(
+  glib_compile_schemas: true
+)
