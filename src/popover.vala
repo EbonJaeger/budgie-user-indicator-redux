@@ -32,6 +32,9 @@ namespace UserIndicatorRedux {
         private ModelButton lock_button;
         private ModelButton logout_button;
         private ModelButton suspend_button;
+#if WITH_HIBERNATE
+        private ModelButton hibernate_button;
+#endif
         private ModelButton restart_button;
         private ModelButton shutdown_button;
 
@@ -76,6 +79,13 @@ namespace UserIndicatorRedux {
             };
             suspend_button.get_style_context ().add_class ("user-indicator-button");
 
+#if WITH_HIBERNATE
+            hibernate_button = new ModelButton () {
+                text = "Hibernate"
+            };
+            hibernate_button.get_style_context ().add_class ("user-indicator-button");
+#endif
+
             restart_button = new ModelButton () {
                 text = "Reboot..."
             };
@@ -93,6 +103,9 @@ namespace UserIndicatorRedux {
             box.pack_start (logout_button);
             box.pack_start (new Separator (Orientation.HORIZONTAL), true, true, 2);
             box.pack_start (suspend_button);
+#if WITH_HIBERNATE
+            box.pack_start (hibernate_button);
+#endif
             box.pack_start (restart_button);
             box.pack_start (shutdown_button);
             add (box);
@@ -136,6 +149,18 @@ namespace UserIndicatorRedux {
                 }
             });
 
+#if WITH_HIBERNATE
+            hibernate_button.clicked.connect (() => {
+                hide ();
+
+                try {
+                    logind_interface.hibernate (true);
+                } catch (Error e) {
+                    warning ("Unable to hibernate: %s", e.message);
+                }
+            });
+#endif
+
             restart_button.clicked.connect (() => {
                 hide ();
 
@@ -161,6 +186,21 @@ namespace UserIndicatorRedux {
                     }
                 });
             });
+
+#if WITH_HIBERNATE
+            show.connect (() => {
+                var can_hibernate = false;
+                try {
+                    var resp = logind_interface.can_hibernate ();
+                    if (resp == "yes") can_hibernate = true;
+                } catch (Error e) {
+                    warning ("Unable to check if we can hibernate: %s", e.message);
+                }
+
+                hibernate_button.sensitive = can_hibernate;
+                hibernate_button.tooltip_text = can_hibernate ? null : "This system does not support hibernation";
+            });
+#endif
         }
 
         public Popover (Widget? parent_window) {
