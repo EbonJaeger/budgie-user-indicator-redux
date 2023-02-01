@@ -1,5 +1,5 @@
 project(
-    'budgie-indicator-applet-redux',
+    'budgie-user-indicator-redux',
     ['vala', 'c'],
     version: '0.1.0',
     license: 'GPL-2.0',
@@ -29,7 +29,7 @@ dep_vala = dependency('vapigen', version: '>= 0.52.5')
 prefix = get_option('prefix')
 libdir = join_paths(prefix, get_option('libdir'))
 datadir = join_paths(prefix, get_option('datadir'))
-applet_install_dir = join_paths(libdir, 'budgie-desktop', 'plugins', 'com.github.EbonJaeger.budgie-user-indicator-applet-redux')
+applet_install_dir = join_paths(libdir, 'budgie-desktop', 'plugins', 'com.github.EbonJaeger.user-indicator-redux')
 
 # Code configuration
 
@@ -38,5 +38,8 @@ if with_hibernate == true
   add_project_arguments('-D', 'WITH_HIBERNATE', language: 'vala')
 endif
 
+gnome = import('gnome')
+
 subdir('data')
+subdir('style')
 subdir('src')

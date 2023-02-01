@@ -38,9 +38,9 @@ namespace UserIndicatorRedux {
         construct {
             user_boxes = new HashMap<uint, Widgets.UserBox?> ();
             username = Environment.get_user_name ();
-            get_style_context ().add_class ("user-menu");
 
             var box = new Box (Orientation.VERTICAL, 0);
+            box.get_style_context ().add_class ("user-indicator-menu");
 
             user_header = new Box (Orientation.VERTICAL, 12);
 
@@ -48,6 +48,7 @@ namespace UserIndicatorRedux {
                 text = "User Settings..."
             };
             settings_button.get_style_context ().add_class ("flat");
+            settings_button.get_style_context ().add_class ("user-indicator-button");
             settings_button.clicked.connect (() => {
                 var info = new DesktopAppInfo ("budgie-user-accounts-panel.desktop");
                 if (info == null) return;
@@ -63,22 +64,27 @@ namespace UserIndicatorRedux {
             lock_button = new ModelButton () {
                 text = "Lock"
             };
+            lock_button.get_style_context ().add_class ("user-indicator-button");
 
             logout_button = new ModelButton () {
                 text = "Logout..."
             };
+            logout_button.get_style_context ().add_class ("user-indicator-button");
 
             suspend_button = new ModelButton () {
                 text = "Suspend"
             };
+            suspend_button.get_style_context ().add_class ("user-indicator-button");
 
             restart_button = new ModelButton () {
                 text = "Reboot..."
             };
+            restart_button.get_style_context ().add_class ("user-indicator-button");
 
             shutdown_button = new ModelButton () {
                 text = "Shutdown..."
             };
+            shutdown_button.get_style_context ().add_class ("user-indicator-button");
 
             user_header.pack_end (settings_button);
             box.pack_start (user_header, false, false, 0);

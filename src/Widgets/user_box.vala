@@ -25,12 +25,12 @@ namespace UserIndicatorRedux.Widgets {
         }
 
         construct {
-            fullname_label = new Label ("<b>%s</b>".printf (fullname)) {
-                use_markup = true,
+            get_style_context ().add_class ("user-indicator-userbox");
+
+            fullname_label = new Label ("%s".printf (fullname)) {
                 valign = START,
                 margin_top = 8
             };
-            fullname_label.get_style_context ().add_class ("user-box-name");
 
             if (user == null) {
                 user_image = new UserImage ();
@@ -54,7 +54,7 @@ namespace UserIndicatorRedux.Widgets {
         private void update () {
             if (user == null) return;
 
-            fullname_label.label = "<b>%s</b>".printf (user.real_name);
+            fullname_label.label = "%s".printf (user.real_name);
             user_image.set_from_file (user.icon_file);
         }
     }

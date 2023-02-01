@@ -1,3 +1,22 @@
+# Compile our resources
+
+gresource = join_paths(meson.current_source_dir(), 'user-indicator-redux.gresource.xml')
+
+applet_resources = gnome.compile_resources(
+    'user-indicator-redux-resources',
+    gresource,
+    dependencies: [ style ],
+    c_name: 'user_indicator_redux',
+)
+
+lib_applet_resources = static_library(
+    'user-indicator-redux-resources',
+    applet_resources,
+    dependencies: [ dep_glib ],
+    install: false,
+    c_args: [ '-Wno-overlength-strings' ],
+)
+
 # Dependencies
 
 applet_deps = [
@@ -24,6 +43,13 @@ shared_library(
     'userindicatorredux',
     applet_sources,
     dependencies: applet_deps,
+    vala_args: [
+        '--target-glib=2.38',
+        '--gresources=' + gresource,
+    ],
+    link_whole: [
+        lib_applet_resources,
+    ],
     install: true,
     install_dir: applet_install_dir
 )

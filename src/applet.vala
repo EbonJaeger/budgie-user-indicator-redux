@@ -9,6 +9,7 @@
  * (at your option) any later version.
  */
 
+using Gdk;
 using Gtk;
 
 namespace UserIndicatorRedux {
@@ -27,6 +28,13 @@ namespace UserIndicatorRedux {
         private Popover popover;
 
         construct {
+            // Load our CSS
+            var screen = Screen.get_default ();
+            var provider = new CssProvider ();
+            provider.load_from_resource ("/com/github/EbonJaeger/user-indicator-redux/style.css");
+            StyleContext.add_provider_for_screen (screen, provider, STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            // Create our widgets
             button = new Button.from_icon_name ("system-shutdown-symbolic", MENU);
             button.get_style_context ().add_class ("flat");
 

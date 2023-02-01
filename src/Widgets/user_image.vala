@@ -31,7 +31,7 @@ namespace UserIndicatorRedux.Widgets {
 
         construct {
             set_from_file (filename);
-            get_style_context ().add_class ("user-image");
+            get_style_context ().add_class ("user-indicator-image");
         }
 
         /**

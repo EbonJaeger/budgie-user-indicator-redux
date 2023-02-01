@@ -1,0 +1,13 @@
+.user-indicator-userbox {
+    padding: 12px;
+    padding-bottom: 0;
+
+    & label {
+        font-weight: bold;
+    }
+
+    & .user-indicator-image {
+        border-radius: 50%;
+        box-shadow: 0 0 2px gray;
+    }
+}
