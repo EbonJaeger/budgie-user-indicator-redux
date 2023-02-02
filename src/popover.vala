@@ -245,15 +245,23 @@ namespace UserIndicatorRedux {
             if (!user_manager.is_loaded) return;
 
             unowned var user = user_manager.get_user (username);
+            add_user (user);
+
             user.notify["is-loaded"].connect (() => {
-                var uid = user.uid;
-
-                if (user_boxes.has_key (uid)) return;
-
-                var user_box = new Widgets.UserBox (user);
-                user_boxes[uid] = user_box;
-                user_header.pack_start (user_box);
+                add_user (user);
             });
+        }
+
+        private void add_user (Act.User user) {
+            if (!user.is_loaded) return;
+
+            var uid = user.uid;
+
+            if (user_boxes.has_key (uid)) return;
+
+            var user_box = new Widgets.UserBox (user);
+            user_boxes[uid] = user_box;
+            user_header.pack_start (user_box);
         }
     }
 }
