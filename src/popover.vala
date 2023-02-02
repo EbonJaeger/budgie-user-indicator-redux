@@ -31,15 +31,15 @@ namespace UserIndicatorRedux {
         private Box user_header;
         private HashMap<uint, Widgets.UserBox?> user_boxes;
 
-        private ModelButton settings_button;
-        private ModelButton lock_button;
-        private ModelButton logout_button;
-        private ModelButton suspend_button;
+        private Button settings_button;
+        private Button lock_button;
+        private Button logout_button;
+        private Button suspend_button;
 #if WITH_HIBERNATE
-        private ModelButton hibernate_button;
+        private Button hibernate_button;
 #endif
-        private ModelButton restart_button;
-        private ModelButton shutdown_button;
+        private Button restart_button;
+        private Button shutdown_button;
 
         construct {
             user_boxes = new HashMap<uint, Widgets.UserBox?> ();
@@ -50,9 +50,11 @@ namespace UserIndicatorRedux {
 
             user_header = new Box (Orientation.VERTICAL, 12);
 
-            settings_button = new ModelButton () {
-                text = "User Settings..."
+            settings_button = new Button () {
+                label = "User Settings..."
             };
+            settings_button.get_child ().halign = Align.START;
+            settings_button.get_style_context ().add_class ("flat");
             settings_button.get_style_context ().add_class ("user-indicator-button");
             settings_button.clicked.connect (() => {
                 var info = new DesktopAppInfo ("budgie-user-accounts-panel.desktop");
@@ -66,36 +68,54 @@ namespace UserIndicatorRedux {
                 }
             });
 
-            lock_button = new ModelButton () {
-                text = "Lock"
+            lock_button = new Button () {
+                image = new Image.from_icon_name ("system-lock-screen-symbolic", IconSize.BUTTON),
+                label = "Lock"
             };
+            lock_button.get_child ().halign = Align.START;
+            lock_button.get_style_context ().add_class ("flat");
             lock_button.get_style_context ().add_class ("user-indicator-button");
 
-            logout_button = new ModelButton () {
-                text = "Logout..."
+            logout_button = new Button () {
+                image = new Image.from_icon_name ("system-log-out-symbolic", IconSize.BUTTON),
+                label = "Logout..."
             };
+            logout_button.get_child ().halign = Align.START;
+            logout_button.get_style_context ().add_class ("flat");
             logout_button.get_style_context ().add_class ("user-indicator-button");
 
-            suspend_button = new ModelButton () {
-                text = "Suspend"
+            suspend_button = new Button () {
+                image = new Image.from_icon_name ("system-suspend-symbolic", IconSize.BUTTON),
+                label = "Suspend"
             };
+            suspend_button.get_child ().halign = Align.START;
+            suspend_button.get_style_context ().add_class ("flat");
             suspend_button.get_style_context ().add_class ("user-indicator-button");
 
 #if WITH_HIBERNATE
-            hibernate_button = new ModelButton () {
-                text = "Hibernate"
+            hibernate_button = new Button () {
+                image = new Image.from_icon_name ("system-hibernate-symbolic", IconSize.BUTTON),
+                label = "Hibernate"
             };
+            hibernate_button.get_child ().halign = Align.START;
+            hibernate_button.get_style_context ().add_class ("flat");
             hibernate_button.get_style_context ().add_class ("user-indicator-button");
 #endif
 
-            restart_button = new ModelButton () {
-                text = "Reboot..."
+            restart_button = new Button () {
+                image = new Image.from_icon_name ("system-restart-symbolic", IconSize.BUTTON),
+                label = "Reboot..."
             };
+            restart_button.get_child ().halign = Align.START;
+            restart_button.get_style_context ().add_class ("flat");
             restart_button.get_style_context ().add_class ("user-indicator-button");
 
-            shutdown_button = new ModelButton () {
-                text = "Shutdown..."
+            shutdown_button = new Button () {
+                image = new Image.from_icon_name ("system-shutdown-symbolic", IconSize.BUTTON),
+                label = "Shutdown..."
             };
+            shutdown_button.get_child ().halign = Align.START;
+            shutdown_button.get_style_context ().add_class ("flat");
             shutdown_button.get_style_context ().add_class ("user-indicator-button");
 
             user_header.pack_end (settings_button);
@@ -220,6 +240,16 @@ namespace UserIndicatorRedux {
 #if WITH_HIBERNATE
             settings.bind ("show-hibernate", hibernate_button, "visible", SettingsBindFlags.GET);
 #endif
+
+            // Bind the button icon settings
+            settings.bind ("show-button-icons", lock_button, "always-show-image", SettingsBindFlags.GET);
+            settings.bind ("show-button-icons", logout_button, "always-show-image", SettingsBindFlags.GET);
+            settings.bind ("show-button-icons", suspend_button, "always-show-image", SettingsBindFlags.GET);
+#if WITH_HIBERNATE
+            settings.bind ("show-button-icons", hibernate_button, "always-show-image", SettingsBindFlags.GET);
+#endif
+            settings.bind ("show-button-icons", restart_button, "always-show-image", SettingsBindFlags.GET);
+            settings.bind ("show-button-icons", shutdown_button, "always-show-image", SettingsBindFlags.GET);
         }
 
         private async void init_interfaces () {

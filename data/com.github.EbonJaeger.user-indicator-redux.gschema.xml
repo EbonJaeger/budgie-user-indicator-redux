@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="user-indicator-redux">
   <schema id="com.github.EbonJaeger.user-indicator-redux">
+    <key type="b" name="show-button-icons">
+      <default>true</default>
+      <summary>Show icons on buttons</summary>
+      <description>Show icons on buttons in the menu</description>
+    </key>
+
     <key type="b" name="show-user-settings">
       <default>true</default>
       <summary>Show user settings button</summary>

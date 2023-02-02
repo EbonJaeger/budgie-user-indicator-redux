@@ -22,6 +22,9 @@ namespace UserIndicatorRedux {
     [GtkTemplate (ui = "/com/github/EbonJaeger/user-indicator-redux/settings.ui")]
     public class AppletSettings : Grid {
         [GtkChild]
+        private unowned Switch? switch_show_button_icons;
+
+        [GtkChild]
         private unowned Switch? switch_show_user_settings;
 
         [GtkChild]
@@ -34,6 +37,7 @@ namespace UserIndicatorRedux {
 
         public AppletSettings (GLib.Settings? settings) {
             this.settings = settings;
+            settings.bind ("show-button-icons", switch_show_button_icons, "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-user-settings", switch_show_user_settings, "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-suspend", switch_show_suspend, "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-hibernate", switch_show_hibernate, "active", SettingsBindFlags.DEFAULT);
