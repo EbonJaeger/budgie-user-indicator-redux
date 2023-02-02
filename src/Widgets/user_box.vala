@@ -19,6 +19,7 @@ namespace UserIndicatorRedux.Widgets {
 
         private UserImage user_image;
         private Label fullname_label;
+        private Label type_label;
 
         public UserBox (User user) {
             Object (user: user);
@@ -31,11 +32,21 @@ namespace UserIndicatorRedux.Widgets {
                 valign = START,
                 margin_top = 8
             };
+            fullname_label.get_style_context ().add_class ("user-indicator-userbox-name");
+
+            type_label = new Label (null) {
+                halign = START,
+                valign = START
+            };
+            type_label.get_style_context ().add_class ("user-indicator-userbox-type");
 
             if (user == null) {
                 user_image = new UserImage ();
             } else {
                 user_image = new UserImage.from_file (user.icon_file);
+
+                var type = (UserAccountType) user.account_type;
+                type_label.label = "%s".printf (account_type_for_display (type));
 
                 user.changed.connect (update);
                 update ();
@@ -46,6 +57,7 @@ namespace UserIndicatorRedux.Widgets {
             };
             grid.attach (user_image, 0, 0, 3, 3);
             grid.attach (fullname_label, 3, 0, 2, 1);
+            grid.attach (type_label, 3, 1, 2, 1);
 
             add (grid);
             show_all ();
@@ -55,7 +67,30 @@ namespace UserIndicatorRedux.Widgets {
             if (user == null) return;
 
             fullname_label.label = "%s".printf (user.real_name);
+            var type = (UserAccountType) user.account_type;
+            type_label.label = "%s".printf (account_type_for_display (type));
             user_image.set_from_file (user.icon_file);
+        }
+
+        /**
+         * Format a user account type for display.
+         */
+        private string account_type_for_display (UserAccountType type) {
+            var ret = "Unknown";
+
+            switch (type) {
+                case UserAccountType.ADMINISTRATOR:
+                    ret = "Administrator";
+                    break;
+                case UserAccountType.STANDARD:
+                    ret = "Standard";
+                    break;
+                default:
+                    ret = "Unknown";
+                    break;
+            }
+
+            return ret;
         }
     }
 }
