@@ -122,11 +122,13 @@ namespace UserIndicatorRedux {
             lock_button.clicked.connect (() => {
                 hide ();
 
-                try {
-                    screensaver_interface.lock ();
-                } catch (Error e) {
-                    warning ("Unable to lock the screen: %s", e.message);
-                }
+                Idle.add (() => {
+                    try {
+                        screensaver_interface.lock ();
+                    } catch (Error e) {
+                        warning ("Unable to lock the screen: %s", e.message);
+                    }
+                });
             });
 
             logout_button.clicked.connect (() => {
@@ -145,22 +147,26 @@ namespace UserIndicatorRedux {
             suspend_button.clicked.connect (() => {
                 hide ();
 
-                try {
-                    logind_interface.suspend (true);
-                } catch (Error e) {
-                    warning ("Unable to suspend: %s", e.message);
-                }
+                Idle.add (() => {
+                    try {
+                        logind_interface.suspend (true);
+                    } catch (Error e) {
+                        warning ("Unable to suspend: %s", e.message);
+                    }
+                });
             });
 
 #if WITH_HIBERNATE
             hibernate_button.clicked.connect (() => {
                 hide ();
 
-                try {
-                    logind_interface.hibernate (true);
-                } catch (Error e) {
-                    warning ("Unable to hibernate: %s", e.message);
-                }
+                Idle.add (() => {
+                    try {
+                        logind_interface.hibernate (true);
+                    } catch (Error e) {
+                        warning ("Unable to hibernate: %s", e.message);
+                    }
+                });
             });
 #endif
 
