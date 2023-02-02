@@ -53,7 +53,6 @@ namespace UserIndicatorRedux {
             settings_button = new ModelButton () {
                 text = "User Settings..."
             };
-            settings_button.get_style_context ().add_class ("flat");
             settings_button.get_style_context ().add_class ("user-indicator-button");
             settings_button.clicked.connect (() => {
                 var info = new DesktopAppInfo ("budgie-user-accounts-panel.desktop");
