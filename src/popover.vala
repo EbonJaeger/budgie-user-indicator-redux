@@ -254,11 +254,7 @@ namespace UserIndicatorRedux {
             try {
                 screensaver_interface = yield Bus.get_proxy<ScreenSaverInterface> (BusType.SESSION, "org.gnome.ScreenSaver", "/org/gnome/ScreenSaver");
             } catch (Error e) {
-#if HAVE_GNOME_SCREENSAVER
-                warning ("Unable to connect to GNOME ScreenSaver interface: %s", e.message);
-#else
-                warning ("Unable to connect to Budgie ScreenSaver interface: %s", e.message);
-#endif
+                warning ("Unable to connect to ScreenSaver interface: %s", e.message);
             }
 
             try {

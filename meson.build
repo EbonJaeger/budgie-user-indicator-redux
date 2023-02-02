@@ -13,6 +13,14 @@ project(
     ],
 )
 
+# Screensaver stuff
+
+budgie_screensaver = find_program('budgie-screensaver', required: false)
+gnome_screensaver = find_program('gnome-screensaver', required: false)
+if not budgie_screensaver.found() and not gnome_screensaver.found()
+  warning('Either Budgie or GNOME Screensaver is required for screen locking functionality. Ensure that one of them is installed at runtime.')
+endif
+
 # Dependencies
 
 dep_accountsservice = dependency('accountsservice')
