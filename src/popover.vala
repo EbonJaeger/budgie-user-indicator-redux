@@ -50,9 +50,7 @@ namespace UserIndicatorRedux {
 
             user_header = new Box (Orientation.VERTICAL, 12);
 
-            settings_button = new Button () {
-                label = "User Settings..."
-            };
+            settings_button = new Button.with_mnemonic ("_User Settings…");
             settings_button.get_child ().halign = Align.START;
             settings_button.get_style_context ().add_class ("flat");
             settings_button.get_style_context ().add_class ("user-indicator-button");
@@ -68,51 +66,45 @@ namespace UserIndicatorRedux {
                 }
             });
 
-            lock_button = new Button () {
-                image = new Image.from_icon_name ("system-lock-screen-symbolic", IconSize.BUTTON),
-                label = "Lock"
+            lock_button = new Button.with_mnemonic ("_Lock") {
+                image = new Image.from_icon_name ("system-lock-screen-symbolic", IconSize.BUTTON)
             };
             lock_button.get_child ().halign = Align.START;
             lock_button.get_style_context ().add_class ("flat");
             lock_button.get_style_context ().add_class ("user-indicator-button");
 
-            logout_button = new Button () {
-                image = new Image.from_icon_name ("system-log-out-symbolic", IconSize.BUTTON),
-                label = "Logout..."
+            logout_button = new Button.with_mnemonic ("L_ogout…") {
+                image = new Image.from_icon_name ("system-log-out-symbolic", IconSize.BUTTON)
             };
             logout_button.get_child ().halign = Align.START;
             logout_button.get_style_context ().add_class ("flat");
             logout_button.get_style_context ().add_class ("user-indicator-button");
 
-            suspend_button = new Button () {
-                image = new Image.from_icon_name ("system-suspend-symbolic", IconSize.BUTTON),
-                label = "Suspend"
+            suspend_button = new Button.with_mnemonic ("_Suspend") {
+                image = new Image.from_icon_name ("system-suspend-symbolic", IconSize.BUTTON)
             };
             suspend_button.get_child ().halign = Align.START;
             suspend_button.get_style_context ().add_class ("flat");
             suspend_button.get_style_context ().add_class ("user-indicator-button");
 
 #if WITH_HIBERNATE
-            hibernate_button = new Button () {
-                image = new Image.from_icon_name ("system-hibernate-symbolic", IconSize.BUTTON),
-                label = "Hibernate"
+            hibernate_button = new Button.with_mnemonic ("_Hibernate") {
+                image = new Image.from_icon_name ("system-hibernate-symbolic", IconSize.BUTTON)
             };
             hibernate_button.get_child ().halign = Align.START;
             hibernate_button.get_style_context ().add_class ("flat");
             hibernate_button.get_style_context ().add_class ("user-indicator-button");
 #endif
 
-            restart_button = new Button () {
-                image = new Image.from_icon_name ("system-restart-symbolic", IconSize.BUTTON),
-                label = "Reboot..."
+            restart_button = new Button.with_mnemonic ("_Restart…") {
+                image = new Image.from_icon_name ("system-restart-symbolic", IconSize.BUTTON)
             };
             restart_button.get_child ().halign = Align.START;
             restart_button.get_style_context ().add_class ("flat");
             restart_button.get_style_context ().add_class ("user-indicator-button");
 
-            shutdown_button = new Button () {
-                image = new Image.from_icon_name ("system-shutdown-symbolic", IconSize.BUTTON),
-                label = "Shutdown..."
+            shutdown_button = new Button.with_mnemonic ("Shut_down…") {
+                image = new Image.from_icon_name ("system-shutdown-symbolic", IconSize.BUTTON)
             };
             shutdown_button.get_child ().halign = Align.START;
             shutdown_button.get_style_context ().add_class ("flat");
