@@ -1,7 +1,8 @@
 # User Indicator Redux
 
 ![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)
-![Release](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?include_prereleases&sort=semver)
+![Stable](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?label=stable&sort=semver)
+![Latest](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?include_prereleases&label=latest&sort=semver)
 
 Manage your user session from the Budgie panel.
 
