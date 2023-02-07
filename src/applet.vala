@@ -65,6 +65,12 @@ namespace UserIndicatorRedux {
         public Applet (string uuid) {
             Object (uuid: uuid);
 
+            // Initialize translations
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
+            Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
+            Intl.textdomain (Config.GETTEXT_PACKAGE);
+
             // Hook up our settings
             settings_schema = "com.github.EbonJaeger.user-indicator-redux";
             settings_prefix = "/com/solus-project/budgie-panel/instance/user-indicator-redux";

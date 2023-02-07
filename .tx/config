@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[o:buddiesofbudgie:p:budgie-user-indicator-redux:r:budgie-user-indicator-reduxpot]
+file_filter  = po/<lang>.po
+minimum_perc = 46
+source_file  = po/budgie-user-indicator-redux.pot
+source_lang = en
+type         = PO

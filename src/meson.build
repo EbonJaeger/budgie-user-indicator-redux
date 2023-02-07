@@ -20,6 +20,7 @@ lib_applet_resources = static_library(
 # Dependencies
 
 applet_deps = [
+    config_dep,
     dep_accountsservice,
     dep_budgie,
     dep_gee,
@@ -44,8 +45,13 @@ shared_library(
     applet_sources,
     dependencies: applet_deps,
     vala_args: [
+        '--pkg=config',
+        '--vapidir=' + vapidir,
         '--target-glib=2.38',
         '--gresources=' + gresource,
+    ],
+    c_args: [
+        '-include', 'config.h'
     ],
     link_whole: [
         lib_applet_resources,

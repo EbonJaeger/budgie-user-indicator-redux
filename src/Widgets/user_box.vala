@@ -76,17 +76,17 @@ namespace UserIndicatorRedux.Widgets {
          * Format a user account type for display.
          */
         private string account_type_for_display (UserAccountType type) {
-            var ret = "Unknown";
+            var ret = _ ("Unknown");
 
             switch (type) {
                 case UserAccountType.ADMINISTRATOR:
-                    ret = "Administrator";
+                    ret = _ ("Administrator");
                     break;
                 case UserAccountType.STANDARD:
-                    ret = "Standard";
+                    ret = _ ("Standard");
                     break;
                 default:
-                    ret = "Unknown";
+                    ret = _ ("Unknown");
                     break;
             }
 

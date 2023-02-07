@@ -1,0 +1,7 @@
+#ifndef H_CONFIG_H
+#define H_CONFIG_H
+
+#define GETTEXT_PACKAGE "@package_name@"
+#define LOCALEDIR "@localedir@"
+
+#endif
