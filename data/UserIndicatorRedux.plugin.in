@@ -1,7 +1,7 @@
 [Plugin]
 Module=libuserindicatorredux.so
 Name=User Indicator Redux
-Description=Lets you manage your session from the panel.
+_Description=Lets you manage your session from the panel.
 Authors=Evan Maddock
 Copyright=Copyright Evan Maddock
 Website=https://github.com/EbonJaeger/budgie-user-indicator-redux

@@ -29,7 +29,7 @@ for file in `find src -name "*.ui"`; do
     fi
 done
 
-for file in `find src -name "*.in"`; do
+for file in `find data -name "*.in"`; do
     if [[ `grep -E "^_*" $file` ]]; then
         do_intltool gettext/keys $file
         do_gettext ${file}.h --add-comments --keyword=N_:1
