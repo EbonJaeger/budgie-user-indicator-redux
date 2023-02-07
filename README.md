@@ -1,8 +1,9 @@
 # User Indicator Redux
 
 ![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)
-![Stable](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?label=stable&sort=semver)
-![Latest](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?include_prereleases&label=latest&sort=semver)
+[![Translate into your language!](https://img.shields.io/badge/help%20translate-Transifex-4AB)](https://www.transifex.com/buddiesofbudgie/budgie-user-indicator-redux)
+[![Latest stable GitHub release](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?label=stable&sort=semver)](https://github.com/EbonJaeger/budgie-user-indicator-redux/releases/latest)
+[![Latest GitHub release, including pre-releases](https://img.shields.io/github/v/tag/EbonJaeger/budgie-user-indicator-redux?include_prereleases&label=latest&sort=semver)](https://github.com/EbonJaeger/budgie-user-indicator-redux/releases)
 
 ![Screenshot](data/screenshot.png?raw-true)
 
