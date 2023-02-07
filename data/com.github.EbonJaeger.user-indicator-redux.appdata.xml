@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>com.github.EbonJaeger.user-indicator-redux</id>
+  <extends>com.solus-project.budgie-desktop</extends>
+  <name>User Indicator Redux</name>
+  <translation type="gettext">user-indicator-redux</translation>
+  <url type="homepage">https://github.com/EbonJaeger/budgie-user-indicator-redux</url>
+  <url type="bugtracker">https://github.com/EbonJaeger/budgie-user-indicator-redux/issues</url>
+  <update_contact>maddock.evan_AT_vivaldi.net</update_contact>
+  
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  
+  <summary>Manage your user session from the Budgie panel</summary>
+  <description>
+    <p>
+      Manage your user session from the Budgie panel.
+    </p>
+    <p>
+      This project is born from the changes to the User Indicator applet shipped with Budgie. Since it simply opens the Budgie Power Dialog, I figured people might still want the old menu. This applet gives them that option. The design is largely inspired from Elementary's Wingpanel session indicator, with some bits of the old Budgie user indicator mixed in, with options to show/hide items in the menu.
+    </p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+        <image>https://raw.githubusercontent.com/EbonJaeger/budgie-user-indicator-redux/main/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  
+  <icon type="stock">system-shutdown</icon>
+</component>

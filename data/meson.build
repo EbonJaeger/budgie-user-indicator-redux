@@ -10,3 +10,15 @@ if compile_schemas.found()
 endif
 
 install_data('UserIndicatorRedux.plugin', install_dir: applet_install_dir)
+
+appstream_file = 'com.github.EbonJaeger.user-indicator-redux.appdata.xml'
+install_data(appstream_file, install_dir: join_paths(datadir, 'metainfo'))
+
+appstream_util = find_program('appstream-util', required: false)
+if appstream_util.found()
+  test(
+    'validate metainfo file',
+    appstream_util,
+    args: ['validate', join_paths(meson.current_source_dir(), appstream_file)]
+  )
+endif
