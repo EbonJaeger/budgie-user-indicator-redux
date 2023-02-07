@@ -50,7 +50,7 @@ namespace UserIndicatorRedux {
 
             user_header = new Box (Orientation.VERTICAL, 12);
 
-            settings_button = new Button.with_mnemonic (_ ("_User Settings…"));
+            settings_button = new Button.with_mnemonic (_("_User Settings…"));
             settings_button.get_child ().halign = Align.START;
             settings_button.get_style_context ().add_class ("flat");
             settings_button.get_style_context ().add_class ("user-indicator-button");
@@ -66,21 +66,21 @@ namespace UserIndicatorRedux {
                 }
             });
 
-            lock_button = new Button.with_mnemonic (_ ("_Lock")) {
+            lock_button = new Button.with_mnemonic (_("_Lock")) {
                 image = new Image.from_icon_name ("system-lock-screen-symbolic", IconSize.BUTTON)
             };
             lock_button.get_child ().halign = Align.START;
             lock_button.get_style_context ().add_class ("flat");
             lock_button.get_style_context ().add_class ("user-indicator-button");
 
-            logout_button = new Button.with_mnemonic (_ ("L_ogout…")) {
+            logout_button = new Button.with_mnemonic (_("L_ogout…")) {
                 image = new Image.from_icon_name ("system-log-out-symbolic", IconSize.BUTTON)
             };
             logout_button.get_child ().halign = Align.START;
             logout_button.get_style_context ().add_class ("flat");
             logout_button.get_style_context ().add_class ("user-indicator-button");
 
-            suspend_button = new Button.with_mnemonic (_ ("_Suspend")) {
+            suspend_button = new Button.with_mnemonic (_("_Suspend")) {
                 image = new Image.from_icon_name ("system-suspend-symbolic", IconSize.BUTTON)
             };
             suspend_button.get_child ().halign = Align.START;
@@ -88,7 +88,7 @@ namespace UserIndicatorRedux {
             suspend_button.get_style_context ().add_class ("user-indicator-button");
 
 #if WITH_HIBERNATE
-            hibernate_button = new Button.with_mnemonic (_ ("_Hibernate")) {
+            hibernate_button = new Button.with_mnemonic (_("_Hibernate")) {
                 image = new Image.from_icon_name ("system-hibernate-symbolic", IconSize.BUTTON)
             };
             hibernate_button.get_child ().halign = Align.START;
@@ -96,14 +96,14 @@ namespace UserIndicatorRedux {
             hibernate_button.get_style_context ().add_class ("user-indicator-button");
 #endif
 
-            restart_button = new Button.with_mnemonic (_ ("_Restart…")) {
+            restart_button = new Button.with_mnemonic (_("_Restart…")) {
                 image = new Image.from_icon_name ("system-restart-symbolic", IconSize.BUTTON)
             };
             restart_button.get_child ().halign = Align.START;
             restart_button.get_style_context ().add_class ("flat");
             restart_button.get_style_context ().add_class ("user-indicator-button");
 
-            shutdown_button = new Button.with_mnemonic (_ ("Shut_down…")) {
+            shutdown_button = new Button.with_mnemonic (_("Shut_down…")) {
                 image = new Image.from_icon_name ("system-shutdown-symbolic", IconSize.BUTTON)
             };
             shutdown_button.get_child ().halign = Align.START;
@@ -218,7 +218,7 @@ namespace UserIndicatorRedux {
                 }
 
                 hibernate_button.sensitive = can_hibernate;
-                hibernate_button.tooltip_text = can_hibernate ? null : _ ("This system does not support hibernation");
+                hibernate_button.tooltip_text = can_hibernate ? null : _("This system does not support hibernation");
             });
 #endif
         }
