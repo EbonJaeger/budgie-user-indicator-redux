@@ -16,7 +16,7 @@ using Gtk;
 
 namespace UserIndicatorRedux.Widgets {
     public class UserImage : Image {
-        private const string GENERIC_USER_ICON = "user-info";
+        private const string GENERIC_USER_ICON = "avatar-default";
         private const int ICON_SIZE = 48;
 
         public string? filename { get; construct set; default = null; }
@@ -40,17 +40,20 @@ namespace UserIndicatorRedux.Widgets {
          */
         public new void set_from_file(string filename) {
             this.filename = filename;
+            var has_slash_prefix = filename.has_prefix ("/");
+            var is_user_image = (has_slash_prefix && !filename.has_suffix (".face"));
+            var source = (has_slash_prefix && !is_user_image) ? GENERIC_USER_ICON : filename;
 
-            if (filename != null) {
+            if (is_user_image) {
                 try {
-                    var pixbuf = new Pixbuf.from_file_at_size (filename, ICON_SIZE, ICON_SIZE);
+                    var pixbuf = new Pixbuf.from_file_at_size (source, ICON_SIZE, ICON_SIZE);
                     var surface = render_rounded (pixbuf, 1);
                     set_from_surface (surface);
                 } catch (Error e) {
                     warning ("File for user image does not exist: %s", e.message);
                 }
             } else {
-                set_from_icon_name (GENERIC_USER_ICON, IconSize.DIALOG);
+                set_from_icon_name (source, IconSize.DIALOG);
             }
         }
 
