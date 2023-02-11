@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the budgie-user-indicator-redux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Yaroslav Popkov, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: budgie-user-indicator-redux 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 16:35-0500\n"
+"PO-Revision-Date: 2023-02-07 20:21+0000\n"
+"Last-Translator: Yaroslav Popkov, 2023\n"
+"Language-Team: Russian (https://www.transifex.com/buddiesofbudgie/teams/129844/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: src/popover.vala:53
+msgid "_User Settings…"
+msgstr "_Настройки пользователя..."
+
+#: src/popover.vala:69
+msgid "_Lock"
+msgstr "_Заблокировать"
+
+#: src/popover.vala:76
+msgid "L_ogout…"
+msgstr "_В_ыход..."
+
+#: src/popover.vala:83
+msgid "_Suspend"
+msgstr "_Приостановить "
+
+#: src/popover.vala:91
+msgid "_Hibernate"
+msgstr "_Гибернация"
+
+#: src/popover.vala:99
+msgid "_Restart…"
+msgstr "_Перезагрузка..."
+
+#: src/popover.vala:106
+msgid "Shut_down…"
+msgstr "Выключить..."
+
+#: src/popover.vala:221
+msgid "This system does not support hibernation"
+msgstr "Эта система не поддерживает гибернацию"
+
+#: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
+msgid "Unknown"
+msgstr "Неизвестный"
+
+#: src/Widgets/user_box.vala:83
+msgid "Administrator"
+msgstr "Администратор"
+
+#: src/Widgets/user_box.vala:86
+msgid "Standard"
+msgstr "Стандартный"
+
+#: src/settings.ui.h:1
+msgid "Show button icons"
+msgstr "Показывать значки кнопок"
+
+#: src/settings.ui.h:2
+msgid "Show user settings"
+msgstr "Показать настройки пользователя"
+
+#: src/settings.ui.h:3
+msgid "Show suspend button"
+msgstr "Показать кнопку приостановки"
+
+#: src/settings.ui.h:4
+msgid "Show hibernate button"
+msgstr "Показать кнопку гибернации"
+
+#: data/UserIndicatorRedux.plugin.in.h:1
+msgid "Lets you manage your session from the panel."
+msgstr "Позволяет вам управлять своим сеансом с панели."

@@ -65,7 +65,7 @@ gnome = import('gnome')
 
 subdir('data')
 subdir('style')
-# subdir('po')
+subdir('po')
 subdir('src')
 
 gnome.post_install(

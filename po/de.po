@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the budgie-user-indicator-redux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Thomas Staudinger, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: budgie-user-indicator-redux 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 16:35-0500\n"
+"PO-Revision-Date: 2023-02-07 20:21+0000\n"
+"Last-Translator: Thomas Staudinger, 2023\n"
+"Language-Team: German (https://www.transifex.com/buddiesofbudgie/teams/129844/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/popover.vala:53
+msgid "_User Settings…"
+msgstr "_Benutzereinstellungen…"
+
+#: src/popover.vala:69
+msgid "_Lock"
+msgstr "_Sperren"
+
+#: src/popover.vala:76
+msgid "L_ogout…"
+msgstr "_Abmelden..."
+
+#: src/popover.vala:83
+msgid "_Suspend"
+msgstr "_Standby"
+
+#: src/popover.vala:91
+msgid "_Hibernate"
+msgstr "_Ruhezustand"
+
+#: src/popover.vala:99
+msgid "_Restart…"
+msgstr "_Neustart..."
+
+#: src/popover.vala:106
+msgid "Shut_down…"
+msgstr "_Herunterfahren..."
+
+#: src/popover.vala:221
+msgid "This system does not support hibernation"
+msgstr "Dieses System unterstützt keinen Ruhezustand"
+
+#: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: src/Widgets/user_box.vala:83
+msgid "Administrator"
+msgstr "Administrator"
+
+#: src/Widgets/user_box.vala:86
+msgid "Standard"
+msgstr "Standard"
+
+#: src/settings.ui.h:1
+msgid "Show button icons"
+msgstr "Symbole für Schalter anzeigen"
+
+#: src/settings.ui.h:2
+msgid "Show user settings"
+msgstr "Benutzereinstellungen anzeigen"
+
+#: src/settings.ui.h:3
+msgid "Show suspend button"
+msgstr "Standby-Schalter anzeigen"
+
+#: src/settings.ui.h:4
+msgid "Show hibernate button"
+msgstr "Ruhezustand-Schalter anzeigen"
+
+#: data/UserIndicatorRedux.plugin.in.h:1
+msgid "Lets you manage your session from the panel."
+msgstr "Ermöglicht es, die Sitzung von der Leiste aus zu verwalten."
