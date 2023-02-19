@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Yaroslav Popkov, 2023
-# Виктор, 2023
+# Junghee Lee <daemul72@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -14,74 +13,74 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 16:35-0500\n"
 "PO-Revision-Date: 2023-02-07 20:21+0000\n"
-"Last-Translator: Виктор, 2023\n"
-"Language-Team: Russian (https://www.transifex.com/buddiesofbudgie/teams/129844/ru/)\n"
+"Last-Translator: Junghee Lee <daemul72@gmail.com>, 2023\n"
+"Language-Team: Korean (https://www.transifex.com/buddiesofbudgie/teams/129844/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/popover.vala:53
 msgid "_User Settings…"
-msgstr "_Настройки пользователя..."
+msgstr "사용자 설정(_U)..."
 
 #: src/popover.vala:69
 msgid "_Lock"
-msgstr "_Заблокировать"
+msgstr "잠금(_L)"
 
 #: src/popover.vala:76
 msgid "L_ogout…"
-msgstr "_Выход..."
+msgstr "로그아웃(_O)..."
 
 #: src/popover.vala:83
 msgid "_Suspend"
-msgstr "_Приостановить "
+msgstr "절전모드(_S)"
 
 #: src/popover.vala:91
 msgid "_Hibernate"
-msgstr "_Гибернация"
+msgstr "최대 절전모드(_H)"
 
 #: src/popover.vala:99
 msgid "_Restart…"
-msgstr "_Перезагрузка..."
+msgstr "재시작(_R)..."
 
 #: src/popover.vala:106
 msgid "Shut_down…"
-msgstr "Вы_ключить..."
+msgstr "컴퓨터 끄기(_D)..."
 
 #: src/popover.vala:221
 msgid "This system does not support hibernation"
-msgstr "Эта система не поддерживает гибернацию"
+msgstr "이 시스템은 최대 절전 모드를 지원하지 않습니다"
 
 #: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
 msgid "Unknown"
-msgstr "Неизвестно"
+msgstr "알 수 없음"
 
 #: src/Widgets/user_box.vala:83
 msgid "Administrator"
-msgstr "Администратор"
+msgstr "관리자"
 
 #: src/Widgets/user_box.vala:86
 msgid "Standard"
-msgstr "Стандартный"
+msgstr "표준"
 
 #: src/settings.ui.h:1
 msgid "Show button icons"
-msgstr "Показывать значки кнопок"
+msgstr "버튼 아이콘 표시하기"
 
 #: src/settings.ui.h:2
 msgid "Show user settings"
-msgstr "Показать настройки пользователя"
+msgstr "사용자 설정 표시하기"
 
 #: src/settings.ui.h:3
 msgid "Show suspend button"
-msgstr "Показать кнопку приостановки"
+msgstr "절전모드 버튼 표시하기"
 
 #: src/settings.ui.h:4
 msgid "Show hibernate button"
-msgstr "Показать кнопку гибернации"
+msgstr "최대 절전모드 표시하기"
 
 #: data/UserIndicatorRedux.plugin.in.h:1
 msgid "Lets you manage your session from the panel."
-msgstr "Позволяет вам управлять своим сеансом с панели."
+msgstr "패널에서 세션을 관리할 수 있습니다."

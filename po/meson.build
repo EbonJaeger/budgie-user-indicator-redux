@@ -2,13 +2,7 @@ fs = import('fs')
 i18n = import('i18n')
 
 # for i in *.po; do echo "    '$i'," | sed 's/\.po//'; done
-raw = fs.read('LINGUAS').strip().split('\n')
-langs = []
-foreach item : raw
-    if item != 'budgie-user-indicator-redux'
-        langs += item
-    endif
-endforeach
+langs = fs.read('LINGUAS').strip().split('\n')
 
 # Stole this from gnome-twitch, ty TingPing
 # https://github.com/vinszent/gnome-twitch/tree/master/po

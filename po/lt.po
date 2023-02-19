@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Yaroslav Popkov, 2023
-# Виктор, 2023
+# Moo, 2023
 # 
 #, fuzzy
 msgid ""
@@ -14,74 +13,74 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 16:35-0500\n"
 "PO-Revision-Date: 2023-02-07 20:21+0000\n"
-"Last-Translator: Виктор, 2023\n"
-"Language-Team: Russian (https://www.transifex.com/buddiesofbudgie/teams/129844/ru/)\n"
+"Last-Translator: Moo, 2023\n"
+"Language-Team: Lithuanian (https://www.transifex.com/buddiesofbudgie/teams/129844/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #: src/popover.vala:53
 msgid "_User Settings…"
-msgstr "_Настройки пользователя..."
+msgstr "Na_udotojo nustatymai…"
 
 #: src/popover.vala:69
 msgid "_Lock"
-msgstr "_Заблокировать"
+msgstr "Už_rakinti"
 
 #: src/popover.vala:76
 msgid "L_ogout…"
-msgstr "_Выход..."
+msgstr "A_tsijungti…"
 
 #: src/popover.vala:83
 msgid "_Suspend"
-msgstr "_Приостановить "
+msgstr "Pri_stabdyti"
 
 #: src/popover.vala:91
 msgid "_Hibernate"
-msgstr "_Гибернация"
+msgstr "Už_migdyti"
 
 #: src/popover.vala:99
 msgid "_Restart…"
-msgstr "_Перезагрузка..."
+msgstr "_Paleisti iš naujo…"
 
 #: src/popover.vala:106
 msgid "Shut_down…"
-msgstr "Вы_ключить..."
+msgstr "_Išjungti…"
 
 #: src/popover.vala:221
 msgid "This system does not support hibernation"
-msgstr "Эта система не поддерживает гибернацию"
+msgstr "Sistema nepalaiko užmigdymo"
 
 #: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
 msgid "Unknown"
-msgstr "Неизвестно"
+msgstr "Nežinoma"
 
 #: src/Widgets/user_box.vala:83
 msgid "Administrator"
-msgstr "Администратор"
+msgstr "Administratorius"
 
 #: src/Widgets/user_box.vala:86
 msgid "Standard"
-msgstr "Стандартный"
+msgstr "Standartinė"
 
 #: src/settings.ui.h:1
 msgid "Show button icons"
-msgstr "Показывать значки кнопок"
+msgstr "Rodyti mygtukų piktogramas"
 
 #: src/settings.ui.h:2
 msgid "Show user settings"
-msgstr "Показать настройки пользователя"
+msgstr "Rodyti naudotojo nustatymus"
 
 #: src/settings.ui.h:3
 msgid "Show suspend button"
-msgstr "Показать кнопку приостановки"
+msgstr "Rodyti pristabdymo mygtuką"
 
 #: src/settings.ui.h:4
 msgid "Show hibernate button"
-msgstr "Показать кнопку гибернации"
+msgstr "Rodyti užmigdymo mygtuką"
 
 #: data/UserIndicatorRedux.plugin.in.h:1
 msgid "Lets you manage your session from the panel."
-msgstr "Позволяет вам управлять своим сеансом с панели."
+msgstr "Leidžia jums valdyti seansą iš skydelio."
