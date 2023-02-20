@@ -1,7 +1,7 @@
 project(
     'budgie-user-indicator-redux',
     ['vala', 'c'],
-    version: '0.1.0',
+    version: '1.0.0',
     license: 'GPL-2.0',
     meson_version: '>= 0.57.0',
     default_options: [
