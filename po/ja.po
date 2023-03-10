@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the budgie-user-indicator-redux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Green, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: budgie-user-indicator-redux 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 16:35-0500\n"
+"PO-Revision-Date: 2023-02-07 20:21+0000\n"
+"Last-Translator: Green, 2023\n"
+"Language-Team: Japanese (https://www.transifex.com/buddiesofbudgie/teams/129844/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/popover.vala:53
+msgid "_User Settings…"
+msgstr "ユーザーの設定…(_U)"
+
+#: src/popover.vala:69
+msgid "_Lock"
+msgstr "ロック(_L)"
+
+#: src/popover.vala:76
+msgid "L_ogout…"
+msgstr "ログアウト…(_O)"
+
+#: src/popover.vala:83
+msgid "_Suspend"
+msgstr "サスペンド(_S)"
+
+#: src/popover.vala:91
+msgid "_Hibernate"
+msgstr "ハイバネート(_H)"
+
+#: src/popover.vala:99
+msgid "_Restart…"
+msgstr "再起動(_R)"
+
+#: src/popover.vala:106
+msgid "Shut_down…"
+msgstr "シャットダウン(_D)"
+
+#: src/popover.vala:221
+msgid "This system does not support hibernation"
+msgstr "このシステムはハイバネーションに対応しません"
+
+#: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
+msgid "Unknown"
+msgstr "不明"
+
+#: src/Widgets/user_box.vala:83
+msgid "Administrator"
+msgstr "管理者"
+
+#: src/Widgets/user_box.vala:86
+msgid "Standard"
+msgstr "標準"
+
+#: src/settings.ui.h:1
+msgid "Show button icons"
+msgstr "ボタンのアイコンを表示"
+
+#: src/settings.ui.h:2
+msgid "Show user settings"
+msgstr "ユーザーの設定を表示"
+
+#: src/settings.ui.h:3
+msgid "Show suspend button"
+msgstr "サスペンドのボタンを表示"
+
+#: src/settings.ui.h:4
+msgid "Show hibernate button"
+msgstr "ハイバネートのボタンを表示"
+
+#: data/UserIndicatorRedux.plugin.in.h:1
+msgid "Lets you manage your session from the panel."
+msgstr "パネルからセッションの管理が行えるようにする。"
