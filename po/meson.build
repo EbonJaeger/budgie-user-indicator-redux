@@ -1,12 +1,9 @@
 fs = import('fs')
 i18n = import('i18n')
 
-# for i in *.po; do echo "    '$i'," | sed 's/\.po//'; done
-langs = fs.read('LINGUAS').strip().split('\n')
-
 # Stole this from gnome-twitch, ty TingPing
 # https://github.com/vinszent/gnome-twitch/tree/master/po
-i18n.gettext(meson.project_name(), languages : langs, args : [
+i18n.gettext(meson.project_name(), args : [
     '--from-code=UTF-8',
     '--add-comments',
     '--package-name=' + meson.project_name(),
