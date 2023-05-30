@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Patrice Genieys, 2023
+# Fábio Rodrigues Ribeiro <farribeiro@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -13,74 +13,74 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 16:35-0500\n"
 "PO-Revision-Date: 2023-02-07 20:21+0000\n"
-"Last-Translator: Patrice Genieys, 2023\n"
-"Language-Team: French (https://app.transifex.com/buddiesofbudgie/teams/129844/fr/)\n"
+"Last-Translator: Fábio Rodrigues Ribeiro <farribeiro@gmail.com>, 2023\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/buddiesofbudgie/teams/129844/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: src/popover.vala:53
 msgid "_User Settings…"
-msgstr "Paramètres _utilisateur..."
+msgstr "Definições do _usuário…"
 
 #: src/popover.vala:69
 msgid "_Lock"
-msgstr "_Verrouillé"
+msgstr "_Bloquear"
 
 #: src/popover.vala:76
 msgid "L_ogout…"
-msgstr "D_éconnexion..."
+msgstr "_Terminar sessão…"
 
 #: src/popover.vala:83
 msgid "_Suspend"
-msgstr "_Suspendre"
+msgstr "_Suspender"
 
 #: src/popover.vala:91
 msgid "_Hibernate"
-msgstr "_Mise en veille"
+msgstr "_Hibernar"
 
 #: src/popover.vala:99
 msgid "_Restart…"
-msgstr "_Redémarrer"
+msgstr "_Reiniciar…"
 
 #: src/popover.vala:106
 msgid "Shut_down…"
-msgstr "Arrêter..."
+msgstr "_Desligar"
 
 #: src/popover.vala:221
 msgid "This system does not support hibernation"
-msgstr "Ce système ne supporte pas la mise en veille"
+msgstr "Este sistema não suporta hibernação"
 
 #: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
 msgid "Unknown"
-msgstr "Inconnu"
+msgstr "Desconhecido"
 
 #: src/Widgets/user_box.vala:83
 msgid "Administrator"
-msgstr "Administrateur"
+msgstr "Administrador"
 
 #: src/Widgets/user_box.vala:86
 msgid "Standard"
-msgstr "Standard"
+msgstr "Padrão"
 
 #: src/settings.ui.h:1
 msgid "Show button icons"
-msgstr "Affiche les icônes du bouton"
+msgstr "Mostrar ícones dos botões"
 
 #: src/settings.ui.h:2
 msgid "Show user settings"
-msgstr "Affiche les paramètres utilisateur"
+msgstr ""
 
 #: src/settings.ui.h:3
 msgid "Show suspend button"
-msgstr "Affiche le bouton suspendre"
+msgstr "Mostrar botão de suspender"
 
 #: src/settings.ui.h:4
 msgid "Show hibernate button"
-msgstr "Affiche le bouton de mise en veille"
+msgstr "Mostrar botão de hibernar"
 
 #: data/UserIndicatorRedux.plugin.in.h:1
 msgid "Lets you manage your session from the panel."
-msgstr "Vous permet de gérer votre session à partir du panneau."
+msgstr ""

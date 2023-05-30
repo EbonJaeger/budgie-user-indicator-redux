@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Patrice Genieys, 2023
+# pomon pl, 2023
 # 
 #, fuzzy
 msgid ""
@@ -13,53 +13,53 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 16:35-0500\n"
 "PO-Revision-Date: 2023-02-07 20:21+0000\n"
-"Last-Translator: Patrice Genieys, 2023\n"
-"Language-Team: French (https://app.transifex.com/buddiesofbudgie/teams/129844/fr/)\n"
+"Last-Translator: pomon pl, 2023\n"
+"Language-Team: Polish (https://app.transifex.com/buddiesofbudgie/teams/129844/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: src/popover.vala:53
 msgid "_User Settings…"
-msgstr "Paramètres _utilisateur..."
+msgstr "_Ustawienia użytkownika…"
 
 #: src/popover.vala:69
 msgid "_Lock"
-msgstr "_Verrouillé"
+msgstr "_Zablokuj"
 
 #: src/popover.vala:76
 msgid "L_ogout…"
-msgstr "D_éconnexion..."
+msgstr "Wyl_oguj…"
 
 #: src/popover.vala:83
 msgid "_Suspend"
-msgstr "_Suspendre"
+msgstr "_Uśpij"
 
 #: src/popover.vala:91
 msgid "_Hibernate"
-msgstr "_Mise en veille"
+msgstr "_Hibernuj"
 
 #: src/popover.vala:99
 msgid "_Restart…"
-msgstr "_Redémarrer"
+msgstr "_Uruchom ponownie…"
 
 #: src/popover.vala:106
 msgid "Shut_down…"
-msgstr "Arrêter..."
+msgstr "Zam_knij…"
 
 #: src/popover.vala:221
 msgid "This system does not support hibernation"
-msgstr "Ce système ne supporte pas la mise en veille"
+msgstr "Ten system nie obsługuje hibernacji"
 
 #: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
 msgid "Unknown"
-msgstr "Inconnu"
+msgstr "Nieznany"
 
 #: src/Widgets/user_box.vala:83
 msgid "Administrator"
-msgstr "Administrateur"
+msgstr "Administrator"
 
 #: src/Widgets/user_box.vala:86
 msgid "Standard"
@@ -67,20 +67,20 @@ msgstr "Standard"
 
 #: src/settings.ui.h:1
 msgid "Show button icons"
-msgstr "Affiche les icônes du bouton"
+msgstr "Pokaż ikony przycisków"
 
 #: src/settings.ui.h:2
 msgid "Show user settings"
-msgstr "Affiche les paramètres utilisateur"
+msgstr "Pokaż ustawienia użytkownika"
 
 #: src/settings.ui.h:3
 msgid "Show suspend button"
-msgstr "Affiche le bouton suspendre"
+msgstr "Pokaż przycisk uśpienia"
 
 #: src/settings.ui.h:4
 msgid "Show hibernate button"
-msgstr "Affiche le bouton de mise en veille"
+msgstr "Pokaż przycisk hibernacji"
 
 #: data/UserIndicatorRedux.plugin.in.h:1
 msgid "Lets you manage your session from the panel."
-msgstr "Vous permet de gérer votre session à partir du panneau."
+msgstr "Umożliwia zarządzanie sesją z poziomu panelu."
