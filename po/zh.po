@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the budgie-user-indicator-redux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Wenyin Root <ruojiner@hotmail.com>, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: budgie-user-indicator-redux 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 16:35-0500\n"
+"PO-Revision-Date: 2023-02-07 20:21+0000\n"
+"Last-Translator: Wenyin Root <ruojiner@hotmail.com>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/buddiesofbudgie/teams/129844/zh/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/popover.vala:53
+msgid "_User Settings…"
+msgstr "_用户设定..."
+
+#: src/popover.vala:69
+msgid "_Lock"
+msgstr "_锁定"
+
+#: src/popover.vala:76
+msgid "L_ogout…"
+msgstr "注_销..."
+
+#: src/popover.vala:83
+msgid "_Suspend"
+msgstr "_睡眠"
+
+#: src/popover.vala:91
+msgid "_Hibernate"
+msgstr "_休眠"
+
+#: src/popover.vala:99
+msgid "_Restart…"
+msgstr "_重启..."
+
+#: src/popover.vala:106
+msgid "Shut_down…"
+msgstr "关_机..."
+
+#: src/popover.vala:221
+msgid "This system does not support hibernation"
+msgstr "此系统不支持休眠"
+
+#: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
+msgid "Unknown"
+msgstr "未知"
+
+#: src/Widgets/user_box.vala:83
+msgid "Administrator"
+msgstr "鹳栗猿"
+
+#: src/Widgets/user_box.vala:86
+msgid "Standard"
+msgstr "标准"
+
+#: src/settings.ui.h:1
+msgid "Show button icons"
+msgstr "显示按钮图标"
+
+#: src/settings.ui.h:2
+msgid "Show user settings"
+msgstr "显示用户设定"
+
+#: src/settings.ui.h:3
+msgid "Show suspend button"
+msgstr "显示睡眠按钮"
+
+#: src/settings.ui.h:4
+msgid "Show hibernate button"
+msgstr "显示休眠按钮"
+
+#: data/UserIndicatorRedux.plugin.in.h:1
+msgid "Lets you manage your session from the panel."
+msgstr "请从面板管理你的桌面会话"

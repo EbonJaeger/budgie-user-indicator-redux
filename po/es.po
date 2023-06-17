@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the budgie-user-indicator-redux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# _-Caleb-_ <tanausugomez@gmail.com>, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: budgie-user-indicator-redux 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 16:35-0500\n"
+"PO-Revision-Date: 2023-02-07 20:21+0000\n"
+"Last-Translator: _-Caleb-_ <tanausugomez@gmail.com>, 2023\n"
+"Language-Team: Spanish (https://app.transifex.com/buddiesofbudgie/teams/129844/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: src/popover.vala:53
+msgid "_User Settings…"
+msgstr "_Preferencias de Usuario..."
+
+#: src/popover.vala:69
+msgid "_Lock"
+msgstr "_Bloquear"
+
+#: src/popover.vala:76
+msgid "L_ogout…"
+msgstr "_Cerrar Sesión..."
+
+#: src/popover.vala:83
+msgid "_Suspend"
+msgstr "_Suspender"
+
+#: src/popover.vala:91
+msgid "_Hibernate"
+msgstr "_Hibernar"
+
+#: src/popover.vala:99
+msgid "_Restart…"
+msgstr "_Reiniciar..."
+
+#: src/popover.vala:106
+msgid "Shut_down…"
+msgstr "_Apagar..."
+
+#: src/popover.vala:221
+msgid "This system does not support hibernation"
+msgstr "Este sistema no soporta hibernación"
+
+#: src/Widgets/user_box.vala:79 src/Widgets/user_box.vala:89
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: src/Widgets/user_box.vala:83
+msgid "Administrator"
+msgstr "Administrador"
+
+#: src/Widgets/user_box.vala:86
+msgid "Standard"
+msgstr "Estándar"
+
+#: src/settings.ui.h:1
+msgid "Show button icons"
+msgstr "Mostrar iconos de los botones"
+
+#: src/settings.ui.h:2
+msgid "Show user settings"
+msgstr "Mostrar preferencias de usuario"
+
+#: src/settings.ui.h:3
+msgid "Show suspend button"
+msgstr "Mostrar botón de suspender"
+
+#: src/settings.ui.h:4
+msgid "Show hibernate button"
+msgstr "Mostrar botón de hibernación"
+
+#: data/UserIndicatorRedux.plugin.in.h:1
+msgid "Lets you manage your session from the panel."
+msgstr "Le permite manejar su sesión desde el panel."
