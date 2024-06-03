@@ -97,7 +97,7 @@ namespace UserIndicatorRedux {
 #endif
 
             restart_button = new Button.with_mnemonic (_("_Restart…")) {
-                image = new Image.from_icon_name ("system-restart-symbolic", IconSize.BUTTON)
+                image = new Image.from_icon_name ("system-reboot-symbolic", IconSize.BUTTON)
             };
             restart_button.get_child ().halign = Align.START;
             restart_button.get_style_context ().add_class ("flat");
