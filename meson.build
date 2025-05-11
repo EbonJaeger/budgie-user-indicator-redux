@@ -30,12 +30,12 @@ endif
 # Dependencies
 
 dep_accountsservice = dependency('accountsservice')
-dep_budgie = dependency('budgie-1.0', version: '>= 2')
+dep_budgie = dependency('budgie-2.0', version: '>= 3')
 dep_gee = dependency('gee-0.8', version: '>= 0.20.0')
 dep_gtk3 = dependency('gtk+-3.0', version: '>= 3.24.0')
 dep_glib = dependency('glib-2.0', version: '>= 2.64.0')
 dep_giounix = dependency('gio-unix-2.0', version: '>= 2.64.0')
-dep_peas = dependency('libpeas-1.0', version: '>= 1.26.0')
+dep_peas = dependency('libpeas-2', version: '>= 2.0.0')
 dep_vala = dependency('vapigen', version: '>= 0.52.5')
 
 # Directories
