@@ -27,11 +27,11 @@ msgstr "Paramètres _utilisateur..."
 
 #: src/popover.vala:69
 msgid "_Lock"
-msgstr "_Verrouillé"
+msgstr "_Verrouiller"
 
 #: src/popover.vala:76
 msgid "L_ogout…"
-msgstr "D_éconnexion..."
+msgstr "Se_ Déconnecter..."
 
 #: src/popover.vala:83
 msgid "_Suspend"
@@ -39,7 +39,7 @@ msgstr "_Suspendre"
 
 #: src/popover.vala:91
 msgid "_Hibernate"
-msgstr "_Mise en veille"
+msgstr "_Mettre en veille"
 
 #: src/popover.vala:99
 msgid "_Restart…"
@@ -47,7 +47,7 @@ msgstr "_Redémarrer"
 
 #: src/popover.vala:106
 msgid "Shut_down…"
-msgstr "Arrêter..."
+msgstr "Éteindre"
 
 #: src/popover.vala:221
 msgid "This system does not support hibernation"
