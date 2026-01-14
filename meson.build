@@ -30,7 +30,7 @@ endif
 # Dependencies
 
 dep_accountsservice = dependency('accountsservice')
-dep_budgie = dependency('budgie-2.0', version: '>= 3')
+dep_budgie = dependency('budgie-3.0', version: '>= 4')
 dep_gee = dependency('gee-0.8', version: '>= 0.20.0')
 dep_gtk3 = dependency('gtk+-3.0', version: '>= 3.24.0')
 dep_glib = dependency('glib-2.0', version: '>= 2.64.0')
