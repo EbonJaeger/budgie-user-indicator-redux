@@ -20,6 +20,11 @@ namespace UserIndicatorRedux {
         public abstract void hibernate (bool interactive) throws DBusError, IOError;
     }
 
+    [DBus (name = "org.buddiesofbudgie.BudgieScreenlock")]
+    public interface BudgieScreenlockInterface : Object {
+        public abstract void lock () throws Error;
+    }
+
     [DBus (name = "org.gnome.ScreenSaver")]
     public interface ScreenSaverInterface : Object {
         public abstract void lock () throws Error;
