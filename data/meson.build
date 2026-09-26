@@ -11,8 +11,8 @@ endif
 
 custom_target(
   'appdata-file-user-indicator-redux',
-  input: 'user-indicator-redux.appdata.xml.in',
-  output: 'com.github.EbonJaeger.user-indicator-redux.appdata.xml',
+  input: 'user-indicator-redux.metainfo.xml.in',
+  output: 'com.github.EbonJaeger.user-indicator-redux.metainfo.xml',
   command: [intltool, '--xml-style', podir, '@INPUT@', '@OUTPUT@'],
   install_dir: join_paths(datadir, 'metainfo'),
   install: true
